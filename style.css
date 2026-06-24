@@ -1,0 +1,668 @@
+/* ==========================================================================
+   // SECTION: Base Reset & Typography
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    color: #d4af37;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: #d4af37;
+    color: #0d1117;
+}
+
+.btn-primary:hover {
+    background-color: #f3cf65;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #ffffff;
+    margin-left: 15px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+}
+
+.btn-whatsapp svg {
+    margin-right: 8px;
+}
+
+/* ==========================================================================
+   // SECTION: Navbar
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 17, 23, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5%;
+}
+
+/* Sectie: Logo afbeelding navbar */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Sectie: Logo afbeelding grootte — 3cm breder, 1cm hoger */
+.logo-img {
+    height: 86px;
+    width: auto;
+    min-width: 220px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.btn-nav {
+    border: 1px solid #d4af37;
+    padding: 8px 18px;
+    border-radius: 4px;
+    color: #d4af37 !important;
+}
+
+.btn-nav:hover {
+    background-color: #d4af37;
+    color: #0d1117 !important;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   // SECTION: Hero Area
+   ========================================================================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background: url('img/SkyBuild-1.webp') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 17, 23, 0.9) 40%, rgba(13, 17, 23, 0.6) 100%);
+}
+
+.hero-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    display: block;
+    color: #d4af37;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-title span {
+    color: #d4af37;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #8b949e;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   // SECTION: Section Headers & Layout Cards
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    color: #8b949e;
+    font-size: 1.05rem;
+}
+
+.section-header.left-align {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.grid-3-clean {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-2-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.content-side, .image-side {
+    flex: 1;
+}
+
+.image-showcase {
+    margin-bottom: 50px;
+}
+
+.main-img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.side-img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    object-fit: cover;
+    height: 500px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* USPs */
+.usp-card {
+    background-color: #161b22;
+    padding: 30px 20px;
+    border-radius: 4px;
+    border-top: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.usp-card:hover {
+    border-top-color: #d4af37;
+    transform: translateY(-5px);
+}
+
+.usp-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.usp-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.usp-card p {
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* Services */
+.services-section {
+    background-color: #161b22;
+}
+
+.service-card {
+    background-color: #0d1117;
+    padding: 40px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border 0.3s;
+}
+
+.service-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #8b949e;
+    font-size: 0.95rem;
+}
+
+/* Sectors List */
+.sector-list li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+    color: #8b949e;
+}
+
+.sector-list li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #d4af37;
+    font-size: 0.8rem;
+}
+
+.sector-list strong {
+    color: #ffffff;
+}
+
+/* Knowledge */
+.knowledge-section {
+    background-color: #161b22;
+}
+
+.knowledge-card {
+    background-color: #0d1117;
+    padding: 30px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.knowledge-card h4 {
+    font-size: 1.15rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.knowledge-card p {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.image-card {
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* ==========================================================================
+   // SECTION: Contact - Bel Nu Sectie
+   ========================================================================== */
+.contact-centered {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-centered h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    color: #8b949e;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Sectie: Contact details rij met iconen */
+.contact-details-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #e6edf3;
+}
+
+.contact-detail-item a {
+    color: #e6edf3;
+}
+
+.contact-detail-item a:hover {
+    color: #d4af37;
+}
+
+/* Sectie: Grote bel-nu knop */
+.btn-bel-nu {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #d4af37 0%, #f3cf65 100%);
+    color: #0d1117;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 20px 48px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.btn-bel-nu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(212, 175, 55, 0.5);
+}
+
+.btn-bel-nu:active {
+    transform: scale(0.98);
+}
+
+.contact-note {
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+/* Sectie: WhatsApp rij onder bel-knop */
+.contact-whatsapp-row {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-whatsapp-row .btn-whatsapp {
+    margin-left: 0;
+    padding: 14px 36px;
+    font-size: 1rem;
+}
+
+/* Footer Branding Link Styling */
+.footer .branding {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.footer .branding a {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.footer .branding a:hover {
+    color: #f3cf65;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   // SECTION: Cookie Banner
+   ========================================================================== */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #161b22;
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+    z-index: 9999;
+    padding: 20px 5%;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.cookie-banner.is-visible {
+    transform: translateY(0);
+}
+
+.cookie-banner__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner__text strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.cookie-banner__text p {
+    color: #8b949e;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.cookie-btn:active {
+    transform: scale(0.97);
+}
+
+.cookie-btn--accept {
+    background-color: #d4af37;
+    color: #0d1117;
+}
+
+.cookie-btn--accept:hover {
+    background-color: #f3cf65;
+}
+
+.cookie-btn--decline {
+    background-color: transparent;
+    color: #8b949e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cookie-btn--decline:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    color: #d4af37;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cookie-banner__actions {
+        width: 100%;
+    }
+    .cookie-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .grid-4, .grid-3, .grid-3-clean { grid-template-columns: repeat(2, 1fr); }
+    .grid-2-flex { flex-direction: column; gap: 40px; }
+    .grid-2-form { grid-template-columns: 1fr; gap: 40px; }
+    .hero-title { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0d1117;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { margin: 15px 0; }
+    .menu-toggle { display: block; }
+    .grid-4, .grid-3, .grid-3-clean { grid-template-columns: 1fr; }
+    .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
+    .btn-whatsapp { margin-left: 0; }
+    .hero-title { font-size: 2.2rem; }
+}
