@@ -112,9 +112,13 @@ if (quoteForm) {
 
 // ==========================================================================
 // SECTION: Dynamic Navbar Background Blur on Scroll
+// Gebruikt passive listener + requestAnimationFrame om forced reflow te voorkomen
 // ==========================================================================
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.navbar');
+let rafPending = false;
+
+function updateNavbar() {
+    // Lees scrollY buiten rAF — geen layout-thrashing
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(9, 12, 16, 0.98)';
         navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
@@ -122,4 +126,12 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(13, 17, 23, 0.95)';
         navbar.style.boxShadow = 'none';
     }
-});
+    rafPending = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(updateNavbar);
+    }
+}, { passive: true });

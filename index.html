@@ -4,17 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyBuild | Grip op de realisatiefase</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="SkyBuild is uw interim-specialist in bouw- en projectmanagement. Wij bieden grip op de realisatiefase: projectmanagement, directievoering, bouwtoezicht en oplevermanagement.">
+    <link rel="canonical" href="https://www.skybuild.nl/">
+
+    <!-- Sectie: Preconnect voor snellere DNS-resolutie -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Sectie: Preload hero-afbeelding voor snellere LCP -->
+    <link rel="preload" as="image" href="img/SkyBuild-1.webp" fetchpriority="high">
+
+    <!-- Sectie: Kritieke inline CSS — voorkomt render-blocking voor above-the-fold inhoud -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Montserrat',sans-serif;background-color:#0d1117;color:#e6edf3;line-height:1.6}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:#fff}
+        a{text-decoration:none;color:inherit;transition:all .3s ease}
+        ul{list-style:none}
+        .navbar{position:fixed;top:0;left:0;width:100%;background-color:rgba(13,17,23,.95);border-bottom:1px solid rgba(212,175,55,.1);z-index:1000;transition:background .3s}
+        .nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:20px 5%}
+        .logo{display:flex;align-items:center}
+        .logo-img{height:86px;width:426px;max-width:100%;aspect-ratio:426/86;object-fit:contain;display:block}
+        .nav-links{display:flex;align-items:center}
+        .nav-links li{margin-left:30px}
+        .nav-links a{font-size:.9rem;font-weight:500;letter-spacing:.5px}
+        .nav-links a:hover{color:#d4af37}
+        .btn-nav{border:1px solid #d4af37;padding:8px 18px;border-radius:4px;color:#d4af37!important}
+        .menu-toggle{display:none;cursor:pointer}
+        .menu-toggle .bar{display:block;width:25px;height:3px;margin:5px auto;background-color:#fff;transition:all .3s ease-in-out}
+        .hero{position:relative;height:100vh;min-height:600px;background:url('img/SkyBuild-1.webp') no-repeat center center/cover;display:flex;align-items:center;padding-top:80px;contain:layout style}
+        .hero-container{position:relative;max-width:800px;margin:0 auto;padding:0 5%;text-align:center;z-index:2;min-height:320px}
+        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(13,17,23,.9) 40%,rgba(13,17,23,.6) 100%)}
+        .hero-subtitle{display:block;color:#d4af37;font-size:1rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:20px;font-weight:500}
+        .hero-title{font-size:3.5rem;line-height:1.2;margin-bottom:25px}
+        .hero-title span{color:#d4af37}
+        .hero-description{font-size:1.1rem;color:#8b949e;margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;font-weight:600;font-size:.95rem;border-radius:4px;cursor:pointer;transition:transform .2s,background-color .3s}
+        .btn-primary{background-color:#d4af37;color:#0d1117}
+        .btn-whatsapp{background-color:#25d366;color:#fff;margin-left:15px}
+        .btn-whatsapp svg{margin-right:8px}
+        .tag{display:inline-block;color:#d4af37;text-transform:uppercase;font-size:.85rem;letter-spacing:2px;font-weight:600;margin-bottom:15px}
+        @media(max-width:768px){
+            .nav-links{display:none;position:absolute;top:100%;left:0;width:100%;background-color:#0d1117;flex-direction:column;padding:20px 0}
+            .nav-links.active{display:flex}
+            .nav-links li{margin:15px 0}
+            .menu-toggle{display:block}
+            .hero-title{font-size:2.2rem}
+            .hero-buttons{display:flex;flex-direction:column;gap:15px}
+            .btn-whatsapp{margin-left:0}
+        }
+    </style>
+
+    <!-- Sectie: Laad style.css niet-blokkerend via preload + onload truc -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+    <!-- Sectie: Laad Google Fonts niet-blokkerend (async) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap"></noscript>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="img/Logo-SkyBuild (1).jpg" alt="SkyBuild Logo" class="logo-img">
+                <!-- Sectie: Logo — responsive afmetingen, fetchpriority high (above fold) -->
+                <!-- Sectie: Logo — alleen .webp, geen jpg fallback nodig -->
+                <img src="img/Logo-SkyBuild.webp"
+                     alt="SkyBuild Logo"
+                     class="logo-img"
+                     width="426" height="86"
+                     fetchpriority="high"
+                     decoding="sync">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -56,7 +118,14 @@
             </div>
             
             <div class="image-showcase text-center">
-                <img src="img/SkyBuild-2.webp" alt="SkyBuild Premium Projectbegeleiding" class="main-img">
+                <!-- Sectie: Hoofdafbeelding — responsive sizes voorkomt oversized download -->
+                <img src="img/SkyBuild-2.webp"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1080px"
+                     alt="SkyBuild Premium Projectbegeleiding"
+                     class="main-img"
+                     width="1080" height="270"
+                     loading="lazy"
+                     decoding="async">
             </div>
 
             <div class="grid-4">
@@ -141,7 +210,13 @@
                 </div>
                 
                 <div class="image-side">
-                    <img src="img/SkyBuild-3.webp" alt="SkyBuild Vastgoedsectoren & Werkvelden" class="side-img">
+                    <!-- Sectie: Zijafbeelding sectoren — lazy load + decoding async -->
+                    <img src="img/SkyBuild-3.webp"
+                         alt="SkyBuild Vastgoedsectoren & Werkvelden"
+                         class="side-img"
+                         width="600" height="500"
+                         loading="lazy"
+                         decoding="async">
                 </div>
             </div>
         </div>
@@ -178,7 +253,13 @@
                 </div>
                 
                 <div class="knowledge-card image-card">
-                    <img src="img/SkyBuild-4.webp" alt="Bouwplaats inspectie & Digitale tools" class="card-img">
+                    <!-- Sectie: Kenniskaart afbeelding — lazy load + decoding async -->
+                    <img src="img/SkyBuild-4.webp"
+                         alt="Bouwplaats inspectie & Digitale tools"
+                         class="card-img"
+                         width="400" height="300"
+                         loading="lazy"
+                         decoding="async">
                 </div>
             </div>
         </div>
@@ -243,6 +324,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Sectie: Script defer — voorkomt render-blocking JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>
